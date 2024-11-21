@@ -47,12 +47,13 @@ def get_trending(querystring):
             if channel_name != 'N/A':
                 channel_names.append(channel_name)
 
-            if len(channel_names)<=10:
+            if len(channel_names)<=9:
                 buf = buf + '#'
                 setText_norefresh(buf)
                 setRGB(0,0,255)
                 setText_norefresh('\n Loading...')
             elif len(channel_names)==10:
+                buf = buf + '#'
                 setRGB(0,255,0)
                 setText_norefresh('\n Complete!')
 
