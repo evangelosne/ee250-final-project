@@ -121,7 +121,7 @@ if __name__ == '__main__':
         querystring2 = {"query":channel_name,"social_networks":"facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"}
         get_socials(querystring2)
         print()
-        while len(channel_names) <=10:
+        while len(trending_channels) <=10:
             buf = buf + '|'
             setText_norefresh(buf)
             setRGB(255,255,0)
