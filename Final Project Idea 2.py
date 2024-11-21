@@ -27,6 +27,7 @@ def get_trending(querystring):
     }
     response = requests.get(url, headers=headers, params=querystring)
     channel_names = []
+    buf = ''
 
     if response.status_code == 200:
         json_trending = response.json()
@@ -45,6 +46,13 @@ def get_trending(querystring):
 
             if channel_name != 'N/A':
                 channel_names.append(channel_name)
+
+            if len(channel_names)<10:
+                buf = buf + '#'
+                setText_norefresh(buf)
+                setRGB(255,255,0)
+            elif len(channel_names)==10:
+                setRGB(0,255,0)
 
             print(f"""
             Title: {title}
@@ -108,7 +116,7 @@ def get_socials(querystring):
 if __name__ == '__main__':
 
     setText("")
-    buf = ''
+   
 
     type = input("Enter type of trending video (n - now, mu - music, mo - movies, g - gaming): ").strip()
     hl = input("Enter the language for trending videos (e.g., en for English): ").strip()
@@ -121,12 +129,12 @@ if __name__ == '__main__':
         querystring2 = {"query":channel_name,"social_networks":"facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"}
         get_socials(querystring2)
         print()
-        while len(trending_channels) <=10:
-            buf = buf + '|'
-            setText_norefresh(buf)
-            setRGB(255,255,0)
+        # for i in range(10):
+        #     buf = buf + '|'
+        #     setText_norefresh(buf)
+        #     setRGB(255,255,0)
         
-        setRGB(0,255,0)
+        # setRGB(0,255,0)
 
 
 
