@@ -50,7 +50,7 @@ def get_trending(querystring):
             if len(channel_names)<=9:
                 buf = buf + '#'
                 setText_norefresh(buf)
-                setRGB(0,0,255)
+                setRGB(225,165,0)
                 setText_norefresh('\n Loading...')
             elif len(channel_names)==10:
                 buf = buf + '#'
