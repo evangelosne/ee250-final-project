@@ -8,8 +8,12 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
             color: #333;
+            background-image: url('youtube.jpg'); /* Replace with your image file name */
+            background-size: cover; /* Make the image cover the whole background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep the image fixed during scrolling */
         }
         h1 {
             color: #007BFF;
@@ -20,11 +24,12 @@
     </style>
 </head>
 <body>
-    <h1>{{ Welcome to Sifa and Evangelos' EE250 Project! }}</h1>
-    <p>This app allows you to view trending channels and submit notes.</p>
+    <h1>Welcome to Sifa and Evangelos' EE250 Project!</h1>
+    <p>This app allows you to view YouTube trending channels and submit notes.</p>
     <ul>
         <li><a href="/data">View Trending Channels (JSON)</a></li>
         <li>Send POST requests to <code>/notes</code> for testing.</li>
     </ul>
 </body>
 </html>
+
