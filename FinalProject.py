@@ -121,10 +121,7 @@ def get_socials(querystring):
 #Flask routes
 @app.route('/')
 def home():
-    with open('home.html', 'r') as html_file:  # Ensure home.html is in the same folder as this script
-        content = html_file.read()
-    return content
-   # return "Welcome to Sifa and Evangelos' EE250 Project!"
+    return "Welcome to Sifa and Evangelos' EE250 Project!"
 
 @app.route('/data', methods=['GET'])
 def get_data():
