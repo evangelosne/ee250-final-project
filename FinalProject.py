@@ -18,6 +18,11 @@ import requests
 
 YOUTUBE_KEY = '7bb57b9a30msh6092dea03c45eb3p111033jsn380d3738f27c'  
 
+#FLASK STUFF
+from flask import Flask, jsonify, request
+#from FinalProject import trending_channels
+
+app = Flask(__name__)
 
 def get_trending(querystring):
     url = "https://youtube-search-and-download.p.rapidapi.com/trending"
@@ -113,7 +118,22 @@ def get_socials(querystring):
         }
         print(error_messages.get(response.status_code, "An unexpected error occurred."))
 
-    
+#Flask routes
+@app.route('/')
+def home():
+    with open('home.html', 'r') as html_file:  # Ensure home.html is in the same folder as this script
+        content = html_file.read()
+    return content
+   # return "Welcome to Sifa and Evangelos' EE250 Project!"
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    return jsonify(trending_channels)
+
+@app.route('/notes', methods=['POST'])
+def submit_note():
+    submitted_data = request.json
+    return jsonify({"received": submitted_data, "message": "Data received successfully!"})  
 
 
 if __name__ == '__main__':
@@ -132,7 +152,8 @@ if __name__ == '__main__':
         querystring2 = {"query":channel_name,"social_networks":"facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"}
         get_socials(querystring2)
         print()
-        
+    
+    app.run(debug=True)
 
 
 
