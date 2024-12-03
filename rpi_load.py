@@ -13,8 +13,8 @@ from grove_rgb_lcd import setRGB, setText_norefresh, setText
 
 grovepi.set_bus("RPI_1")
 setText("")
-
-for range(10):
+buf = ''
+for i in range(10):
     buf = buf + '#'
     setText_norefresh(buf)
     setRGB(225,165,0)
