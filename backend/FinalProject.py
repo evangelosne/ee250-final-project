@@ -33,7 +33,6 @@ def home():
 
 @app.route('/youtuberData', methods=['GET'])
 def get_data():
-    trending_channels = ["hello", "bye", "random", "items"]
     return jsonify(trending_channels)
 
 def get_trending(querystring):
