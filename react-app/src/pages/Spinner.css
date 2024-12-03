@@ -1,0 +1,21 @@
+.spinner {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 12px solid rgb(90, 88, 88); 
+    border-top-color: transparent; 
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+/* lighter color rgba(140, 140, 150, 0.365) */
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
