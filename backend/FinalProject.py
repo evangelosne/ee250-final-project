@@ -16,7 +16,7 @@ import time
 #API STUFF
 import requests
 
-YOUTUBE_KEY = '7bb57b9a30msh6092dea03c45eb3p111033jsn380d3738f27c'  
+YOUTUBE_KEY = '3f99df1e04mshfc0764e949efea9p1fef5bjsn69e7d0fc3714'  
 
 #FLASK STUFF
 from flask import Flask, jsonify, request
