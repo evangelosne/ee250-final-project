@@ -139,17 +139,17 @@ def main2():
         querystring2 = {"query":channel_name,"social_networks":"facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"}
         get_socials(querystring2)
         print()
+    return trending_channels
 
 if __name__ == '__main__':
     
     # setText("")
-    main2()
     app.run(debug=True)
   
 @app.route('/youtuberData', methods=['GET'])
 def get_data():
-    trending_channels = get_trending(querystring)
-    return jsonify(trending_channels)
+    trends = main2()
+    return jsonify(trends)
  
 
 
