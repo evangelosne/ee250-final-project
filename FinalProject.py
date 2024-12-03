@@ -134,7 +134,7 @@ def submit_note():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    
     setText("")
    
 
@@ -150,6 +150,7 @@ if __name__ == '__main__':
         get_socials(querystring2)
         print()
     
+    app.run(debug=True)
     
 
 
