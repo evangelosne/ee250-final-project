@@ -31,10 +31,6 @@ def home():
     return content
    # return "Welcome to Sifa and Evangelos' EE250 Project!"
 
-@app.route('/youtuberData', methods=['GET'])
-def get_data():
-    trending_channels = get_trending(querystring)
-    return jsonify(trending_channels)
 
 def get_trending(querystring):
     url = "https://youtube-search-and-download.p.rapidapi.com/trending"
@@ -131,26 +127,30 @@ def get_socials(querystring):
         print(error_messages.get(response.status_code, "An unexpected error occurred.")) 
 
 
-if __name__ == '__main__':
-    
-    # setText("")
-   
-
-    type = input("Enter type of trending video (n - now, mu - music, mo - movies, g - gaming): ").strip()
+def main2():
+    types = input("Enter type of trending video (n - now, mu - music, mo - movies, g - gaming): ").strip()
     hl = input("Enter the language for trending videos (e.g., en for English): ").strip()
     gl = input("Enter the country (e.g., US, UK, BE): ").strip()
     
-    querystring = {"type": type, "hl": hl, "gl": gl}
+    querystring = {"type": types, "hl": hl, "gl": gl}
     trending_channels = get_trending(querystring)
 
     for channel_name in trending_channels:
         querystring2 = {"query":channel_name,"social_networks":"facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"}
         get_socials(querystring2)
         print()
+
+if __name__ == '__main__':
     
+    # setText("")
+    main2()
     app.run(debug=True)
   
-    
+@app.route('/youtuberData', methods=['GET'])
+def get_data():
+    trending_channels = get_trending(querystring)
+    return jsonify(trending_channels)
+ 
 
 
 
