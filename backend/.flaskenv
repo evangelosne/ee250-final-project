@@ -1,2 +1,2 @@
-FLASK_APP=flaskprojectcode.py
+FLASK_APP=FinalProject.py
 FLASK_ENV=development
