@@ -132,7 +132,7 @@ def get_socials(querystring):
 
 if __name__ == '__main__':
     
-    setText("")
+    # setText("")
    
 
     type = input("Enter type of trending video (n - now, mu - music, mo - movies, g - gaming): ").strip()
