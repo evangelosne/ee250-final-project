@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
-#from FinalProject import trending_channels
+from FinalProject import trending_channels
 
-trending_channels = ["hello", "hello"]
+#trending_channels = ["hello", "hello"]
 app = Flask(__name__)
 
 @app.route('/')
